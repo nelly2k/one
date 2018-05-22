@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label":"run everything",
+            "dependsOn":["build web"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "build web",
+            "command": "dotnet",
+            "type": "process",
+            "options": {
+                "cwd": "${workspaceFolder}/one.web"
+            },
+            "args": [
+                "watch",
+                "run"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "open web",
+            "command": "Crome",
+            "windows": {
+                "command":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+            },
+            "args": [
+                "http://localhost:5000"
+            ]
+        },
+        {
+            "label": "open swagger",
+            "command": "Crome",
+            "windows": {
+                "command":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+            },
+            "args": [
+                "http://localhost:5000/swagger"
+            ]
+        }
+    ]
+}

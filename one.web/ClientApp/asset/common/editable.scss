@@ -1,0 +1,21 @@
+.editable{
+    display: inline-block;
+  
+   
+    & .error{
+        color:$red;
+        display: block;
+    }
+
+    & .text{
+        padding:$global-padding*0.5;
+        &:hover{
+            background: $light-grey;
+            &::after{
+                content: "edit";
+                color:green;
+            }
+        }
+    
+    }
+}
