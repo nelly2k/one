@@ -19,10 +19,7 @@ export const actionCreators = {
       try{
         let data = await HttpClient.get<StoryFull>(Entity.Story, id);
         const state = getState();
-        if (state.story.story && data.id != state.story.story.id){
-            return; //TODO come up with better solution
-        }
-
+    
         dispatch({ type: 'FETCH_STORY_SUCCESS', id: id, story: data });
       }catch(e){
           if (e instanceof NotFoundError){

@@ -20,8 +20,7 @@ class Stories extends React.Component<StoriesProps, {}>{
         this.handleInput = this.handleInput.bind(this);
     }
 
-    componentWillMount() {
-        
+    componentWillMount():void {
         this.props.search({} as SearchRequest);
     }
 

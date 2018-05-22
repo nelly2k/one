@@ -36,7 +36,7 @@ class StoryView extends React.Component<StoryDetailProps, IMatrixViewState>{
         isAddLeft:false,
         isAddTop:false,
     }
-    componentWillMount() {
+    componentWillMount():void {
         this.props.fetchStory(this.props.match.params.id);
     }
 

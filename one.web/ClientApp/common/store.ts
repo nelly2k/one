@@ -10,7 +10,7 @@ export interface ApplicationState {
     search:SearchStore.State;
     feature:FeatureStore.FeatureState;
     option:OptionStore.OptionState;
-    optionValue:OptionValueStore.OptionValueState;
+    optionValue:OptionValueStore.IOptionValueState;
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using

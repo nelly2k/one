@@ -31,7 +31,7 @@ namespace one.web
             services.AddScoped<IDeleteCommand<Guid, int, Option>, DeleteOptionCommand>();
             services.AddScoped<IUpdateCommand<Guid, int, Option>, UpdateOptionCommand>();
 
-            services.AddScoped<IAddCommand<NewOptionValue, int>, AddOptionValueCommand>();
+            services.AddScoped<IAddCommand<NewOptionValue>, AddOptionValueCommand>();
             services.AddScoped<IDeleteCommand<Guid, int,int,int,OptionValue>,DeleteOptionValueCommand>();
             services.AddScoped<IUpdateCommand<Guid,int,int,int,OptionValue>,UpdateOptionValueCommnad>();
         }

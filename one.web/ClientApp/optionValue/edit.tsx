@@ -9,7 +9,7 @@ import { ApplicationState } from "../common/store";
 import { connect } from "react-redux";
 
 type OptionValueViewProps =
-    OptionValueStore.OptionValueState
+    OptionValueStore.IOptionValueState
     & typeof OptionValueStore.actionCreator
     & typeof StoryStore.actionCreators
     & RouteComponentProps<{ storyId: string, featureId: number, optionId: number }>

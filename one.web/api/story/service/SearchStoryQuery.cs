@@ -29,11 +29,11 @@ namespace one.api.story
             var all = oneContext.Stories.Where(t => request.Term == "" || t.Title.Contains(request.Term)).OrderByDescending(x=>x.Id);
 
             var paged = (await all
-            .Skip((page - 1) * perPage)
-            .Take(perPage)
-            .Include(x => x.Features)
-            .Include(x => x.Options)
-            .ToListAsync()).Select(mapper.Map<StoryBrief>);
+                .Skip((page - 1) * perPage)
+                .Take(perPage)
+                .Include(x => x.Features)
+                .Include(x => x.Options)
+                .ToListAsync()).Select(mapper.Map<StoryBrief>);
 
             var total = all.Count();
             var result = new SearchResponse

@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { IOnePlace, Places } from './common';
 import StorySearch from "./story/list";
 import Story from "./story/view";
+import MatrixStoryView from "./story/matrix";
 import NewStory from "./story/add";
 import NewFeature from "./feature/add";
 import NewOption from "./option/add/view";
@@ -12,7 +13,7 @@ import { NotFoundErrorView } from './error/notFound';
 
 export const routes = <Layout>
     {getRoute(Places.home, StorySearch)}
-    {getRoute(Places.story, Story)}
+    {getRoute(Places.story, MatrixStoryView)}
     {getRoute(Places.newStory, NewStory)}
     {getRoute(Places.newFeature, NewFeature)}
     {getRoute(Places.newOption, NewOption)}

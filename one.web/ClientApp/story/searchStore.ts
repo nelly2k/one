@@ -16,7 +16,8 @@ export interface State {
 type KnownAction = RequestSearchAction | ReceiveSearchAction |AddStorySuccessAction ;
 export const actionCreators = {
     search: (request : SearchRequest): AppThunkAction < KnownAction > => async(dispatch, getState) => {
-        const response = await HttpClient.get < SearchResponse > (Entity.Story, `?${HttpClient.BuildQueryFromObject(request)}`);
+        const response = await HttpClient.get <SearchResponse>(Entity.Story, 
+            `?${HttpClient.BuildQueryFromObject(request)}`);
         dispatch({type: "SEARCH_SUCCESS", searchRequest: request, stories: response.stories})
     }
 }

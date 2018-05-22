@@ -41,10 +41,12 @@ export class BasePlace implements IOnePlace {
       
         return result;
     }
+
     withTitle(title: string): IOnePlace {
         this.secondaryTitle = title;
         return this;
     }
+    
     withParams(...params: any[]): IOnePlace {
         this.params = params;
         return this;
