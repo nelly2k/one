@@ -9,6 +9,7 @@ import { Page } from "../../common/page";
 import { Places } from "../../common";
 import { StoryDetails } from "../view";
 import { ArrowHandle } from "./arrowHandle";
+import { Zoom } from "./zoom";
 
 type MatrixProps = 
     ApplicationState
@@ -31,11 +32,21 @@ class MatrixStoryView extends React.Component<MatrixProps>{
         }
     }
 
+    plusZoom(){
+        throw Error("Not implemented");
+    }
+
+    minusZoom(){
+        throw Error("Not implemented");
+    }
+
     render():JSX.Element{
         return <Page className="matrix" places={[Places.home, Places.story.withTitle(this.getTitle(this.props.story.story))]}>
         <ArrowHandle isLeft={true} value={36} onClick={()=>console.log("left")}/>
         
-        <div className="grid-x">middle</div>
+        <div className="grid-x">
+        <div><Zoom onMinus={this.minusZoom} onPlus={this.plusZoom} min={1} max={2} /></div>
+        </div>
         <ArrowHandle isLeft={false} value={3} onClick={()=>console.log("right")}/>
         
         </Page>
