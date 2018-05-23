@@ -37,12 +37,12 @@ export class Zoom extends React.Component<IZoomProps, IZoomState>{
         this.props.onPlus();
     }
 
-    render(){
+    render(): JSX.Element {
         return <div><IconButton key="minus" 
                     disabled={this.canMinus()}
-                    onClick={this.onMinus}>-</IconButton>
+                    onClick={this.onMinus}>-</IconButton>,
                 <IconButton key="plus" 
                     disabled={!this.canPlus()}
-                    onClick={this.onPlus}>+</IconButton></div>
+                    onClick={this.onPlus}>+</IconButton></div>;
     }
 }

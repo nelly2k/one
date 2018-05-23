@@ -63,10 +63,12 @@ namespace one.web
             }
 
             app.UseStaticFiles();
-            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, new SwaggerUiSettings
+
+            app.UseSwaggerUi(typeof(Startup).GetTypeInfo().Assembly, cfg =>
             {
-                DefaultUrlTemplate = "{controller}/{action}/{id?}"
+                cfg.GeneratorSettings.DefaultUrlTemplate = "{controller}/{action}/{id?}";
             });
+            
             app.UseAuthentication();  
 
             app.UseMvc(routes =>
